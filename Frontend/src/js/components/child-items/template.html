@@ -1,0 +1,12 @@
+<div>
+    <v-data-table :headers="headers" :items="childItems" :server-items-length="totalCount" :options.sync="pagination"
+        :loading="loading" class="elevation-1" item-key="itemId" no-data-text="Данные отсутствуют">
+        <template v-slot:top>
+            <v-card>
+                <v-card-title>
+                    Максимальное значение  {{ maxValue }}
+                </v-card-title>
+            </v-card>
+        </template>
+    </v-data-table>
+</div>

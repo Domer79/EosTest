@@ -1,0 +1,1 @@
+declare var _baseUrl_: String;

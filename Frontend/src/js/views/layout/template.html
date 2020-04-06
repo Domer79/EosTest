@@ -1,0 +1,54 @@
+<v-app id="inspire">
+    <v-app-bar v-if="$router.currentRoute.name!=='login'" class="app-toolbar" dark color="accent" fixed app clipped-left>
+      <v-icon @click.stop="drawer = !drawer" class="app-menu">menu</v-icon>
+      <v-toolbar-title>
+        EOS
+      </v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-btn @click="" icon>
+        <v-icon>exit_to_app</v-icon>
+      </v-btn>
+    </v-app-bar>
+  
+    <v-navigation-drawer v-model="drawer" fixed clipped app>
+      <v-list dense subheader >
+        <v-list-item to="/">
+          <v-list-item-action>
+            <v-icon>home</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Обзор</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item to="/maxvalueitems">
+          <v-list-item-action>
+            <v-icon>reorder</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Узловые элементы</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item to="/maxvalueitems/cte">
+          <v-list-item-action>
+            <v-icon>reorder</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Узловые элементы (ОТВ)</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item to="/initial-fill">
+          <v-list-item-action>
+            <v-icon>sync</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Обновление данных</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+  
+    <v-content>
+      <router-view></router-view>
+    </v-content>
+  
+  </v-app>

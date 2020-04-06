@@ -1,0 +1,19 @@
+<v-container>
+    <h1>Родительские узлы</h1>
+    <v-row xs12>
+        <v-col>
+            <maxvalue-items v-model="parentItem" :cte="cte"></maxvalue-items>
+        </v-col>
+    </v-row>
+    <v-divider></v-divider>
+    <v-row>
+        <h2>Дочерние элементы</h2>
+    </v-row>
+    <v-row xs12>
+        <v-col>
+            <v-card>
+                <child-items v-if="parentItem" :parent="parentItem.itemId" :cte="cte"></child-items>
+            </v-card>
+        </v-col>
+    </v-row>
+</v-container>

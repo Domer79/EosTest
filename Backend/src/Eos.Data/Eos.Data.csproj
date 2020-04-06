@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Eos.Abstracts\Eos.Abstracts.csproj" />
+      <ProjectReference Include="..\Eos.Data.EF\Eos.Data.EF.csproj" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,15 @@
+<div>
+    <v-data-table :headers="headers" :items="parentItems" :server-items-length="totalCount" :options.sync="pagination"
+        :loading="loading" class="elevation-1" item-key="itemId" no-data-text="Данные отсутствуют"
+        show-select :single-select="true" @item-selected="itemSelected">
+        <!-- <template v-slot:item.itemId="{item}">
+            {{ item.itemId }}
+        </template>
+        <template v-slot:item.title="{item}">
+            {{ item.title }}
+        </template>
+        <template v-slot:item.value="{item}">
+            {{ item.value }}
+        </template> -->
+    </v-data-table>
+</div>

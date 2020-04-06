@@ -1,0 +1,9 @@
+<v-container>
+    <div class="text-center ma-12" v-if="loading">
+        <v-progress-circular :indeterminate="true" :rotate="1" :size="90" :width="7" color="light-blue">
+        </v-progress-circular>
+    </div>
+
+    <h1 v-if="!loading && !error">Данные успешно обновлены!</h1>
+    <h1 v-if="error">Произошел сбой при обновлении данных!</h1>
+</v-container>
