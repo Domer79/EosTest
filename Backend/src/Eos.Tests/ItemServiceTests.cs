@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Linq;
+using System.Threading.Tasks;
 using Autofac;
 using Eos.Abstracts.Bl;
 using Eos.Bl;
@@ -22,6 +23,14 @@ namespace Eos.Tests
         public async Task InitialFilling()
         {
             await _itemService.InitialFilling();
+        }
+
+        [Test]
+        public async Task StringCompareTest()
+        {
+            var items = await _itemService.GreaterTitle("A");
+            
+            Assert.IsTrue(items.Any());
         }
     }
 }

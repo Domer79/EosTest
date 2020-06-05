@@ -7,6 +7,8 @@ using Eos.Abstracts.Data;
 using Eos.Abstracts.Entities;
 using Eos.Abstracts.Models;
 using Eos.Abstracts.Models.Pages;
+using Eos.Data.EF;
+using Eos.Data.EF.Query;
 using Eos.Data.Misc;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
@@ -152,6 +154,14 @@ select ItemId, Title, Value, ParentId from Items where ItemId = @parentId
         public Task AllDelete()
         {
             return _context.Database.ExecuteSqlRawAsync("delete from Items");
+        }
+
+        public async Task<Item[]> GreaterTitle(string sourceTitle)
+        {
+            // var items = await _context.Items.Where(_ => _context.EFFunctions.StringCompare(_.Title, "A")).ToListAsync();
+            var items = await _context.Items.Where(_ => _.Title.Compare("A")).ToArrayAsync();
+
+            return items;
         }
 
         public async Task<ItemPage> GetParents(Pager pager)

@@ -1,16 +1,16 @@
-﻿using Eos.Abstracts.Entities;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Eos.Abstracts.Entities;
+using Eos.Data.EF.Query;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal;
 
-namespace Eos.Data
+namespace Eos.Data.EF
 {
     public class EosContext: DbContext
     {
@@ -24,6 +24,8 @@ namespace Eos.Data
 
         public DbSet<Item> Items { get; set; }
         public DbSet<GlobalItem> GlobalItems { get; set; }
+
+        public DbFunctions EFFunctions => Microsoft.EntityFrameworkCore.EF.Functions;
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

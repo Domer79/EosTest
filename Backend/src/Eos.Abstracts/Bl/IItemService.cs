@@ -18,5 +18,6 @@ namespace Eos.Abstracts.Bl
         Task InitialFilling();
         Task<ItemPage> GetParents(Pager pager);
         Task<ItemPage> GetCteChildItems(Pager pager, Guid parentId);
+        Task<Item[]> GreaterTitle(string sourceTitle);
     }
 }

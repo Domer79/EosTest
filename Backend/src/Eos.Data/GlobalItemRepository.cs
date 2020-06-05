@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Eos.Abstracts.Data;
 using Eos.Abstracts.Entities;
+using Eos.Data.EF;
 using Microsoft.EntityFrameworkCore;
 
 namespace Eos.Data

@@ -62,7 +62,12 @@ namespace Eos.Bl
             var childItemPage = await _repo.GetCteChilds(pager, parentId);
             return childItemPage;
         }
-        
+
+        public Task<Item[]> GreaterTitle(string sourceTitle)
+        {
+            return _repo.GreaterTitle(sourceTitle);
+        }
+
         public async Task InitialFilling()
         {
             Glossary.Reset();

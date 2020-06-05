@@ -17,5 +17,6 @@ namespace Eos.Abstracts.Data
         Task<ItemPage> GetParents(Pager pager);
         Task<ItemPage> GetCteChilds(Pager pager, Guid parentId);
         Task AllDelete();
+        Task<Item[]> GreaterTitle(string sourceTitle);
     }
 }
