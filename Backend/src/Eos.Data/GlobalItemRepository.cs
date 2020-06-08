@@ -48,9 +48,15 @@ namespace Eos.Data
             return _context.SaveChangesAsync();
         }
 
-        public Task AllDelete()
+        public async Task AllDelete()
         {
-            return _context.Database.ExecuteSqlRawAsync("delete from GlobalItems");
+            GlobalItem[] items = await _context.GlobalItems.Take(100).ToArrayAsync();
+            while (items.Any())
+            {
+                _context.GlobalItems.RemoveRange(items);
+                await _context.SaveChangesAsync();
+            }
+            // return _context.Database.ExecuteSqlRawAsync("delete from GlobalItems");
         }
     }
 }

@@ -4,6 +4,7 @@ using Eos.Abstracts.Data;
 using Eos.Bl;
 using Eos.Data;
 using Eos.Data.EF;
+using Eos.Data.EF.Postgres.Query;
 using Eos.Data.EF.Query;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -38,7 +39,12 @@ namespace Eos.Tests
             var config = context.Resolve<IConfiguration>();
             var connectionString = config.GetConnectionString("common");
             var optionsBuilder = new DbContextOptionsBuilder();
-            optionsBuilder.UseSqlServer(connectionString, builder =>
+            // optionsBuilder.UseSqlServer(connectionString, builder =>
+            // {
+            //     builder.AddStringCompareSupport();
+            // });
+            
+            optionsBuilder.UseNpgsql(connectionString, builder =>
             {
                 builder.AddStringCompareSupport();
             });

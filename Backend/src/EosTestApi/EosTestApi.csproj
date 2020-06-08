@@ -21,6 +21,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Eos.Abstracts\Eos.Abstracts.csproj" />
     <ProjectReference Include="..\Eos.Bl\Eos.Bl.csproj" />
+    <ProjectReference Include="..\Eos.Data.EF.Postgres\Eos.Data.EF.Postgres.csproj" />
     <ProjectReference Include="..\Eos.Data.EF\Eos.Data.EF.csproj" />
     <ProjectReference Include="..\Eos.Data\Eos.Data.csproj" />
   </ItemGroup>

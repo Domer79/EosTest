@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eos.AsposeTest.FW", "Eos.As
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eos.Data.EF.Postgres", "Eos.Data.EF.Postgres\Eos.Data.EF.Postgres.csproj", "{32754F0E-7249-4D5E-897F-6210DE1C518A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eos.Data.EF.Oracle", "Eos.Data.EF.Oracle\Eos.Data.EF.Oracle.csproj", "{39A3B8DB-541F-41BB-A1DF-E2EE531DA0DD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +67,10 @@ Global
 		{32754F0E-7249-4D5E-897F-6210DE1C518A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32754F0E-7249-4D5E-897F-6210DE1C518A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32754F0E-7249-4D5E-897F-6210DE1C518A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39A3B8DB-541F-41BB-A1DF-E2EE531DA0DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39A3B8DB-541F-41BB-A1DF-E2EE531DA0DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39A3B8DB-541F-41BB-A1DF-E2EE531DA0DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39A3B8DB-541F-41BB-A1DF-E2EE531DA0DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

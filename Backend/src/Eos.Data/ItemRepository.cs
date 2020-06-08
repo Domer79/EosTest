@@ -151,9 +151,16 @@ select ItemId, Title, Value, ParentId from Items where ItemId = @parentId
             };
         }
 
-        public Task AllDelete()
+        public async Task AllDelete()
         {
-            return _context.Database.ExecuteSqlRawAsync("delete from Items");
+            Item[] items = await _context.Items.Take(100).ToArrayAsync();
+            while (items.Any())
+            {
+                _context.Items.RemoveRange(items);
+                await _context.SaveChangesAsync();
+            }
+
+            // return _context.Database.ExecuteSqlRawAsync("delete from Items");
         }
 
         public async Task<Item[]> GreaterTitle(string sourceTitle)

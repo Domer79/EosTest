@@ -33,9 +33,14 @@ namespace EosTestApi
             string connection = _configuration.GetConnectionString("common");   
             services.AddDbContext<EosContext>(options =>
                 {
-                    options.UseSqlServer(connection);
+                    // options.UseSqlServer(connection);
+                    options.UseNpgsql(connection, builder =>
+                    {
+                        Console.WriteLine("Use Postgres Database Provider");
+                        builder.MigrationsAssembly("Eos.Data.EF.Postgres");
+                    });
                 });
-            
+
             services.AddRepositories();
             services.AddBlServices();
 
@@ -55,11 +60,25 @@ namespace EosTestApi
             }
 
             // migrate
-            var builder = new DbContextOptionsBuilder<EosContext>();
-            var connectionString = _configuration.GetConnectionString("common");
-            builder.UseSqlServer(connectionString);
-            using var backOfficeContext = new EosContext(builder.Options);
-            backOfficeContext.Database.Migrate();
+            try
+            {
+                var builder = new DbContextOptionsBuilder<EosContext>();
+                var connectionString = _configuration.GetConnectionString("common");
+                // builder.UseSqlServer(connectionString);
+                builder.UseNpgsql(connectionString, builder =>
+                {
+                    Console.WriteLine("Use Postgres Database Provider");
+                    builder.MigrationsAssembly("Eos.Data.EF.Postgres");
+                });
+                using var context = new EosContext(builder.Options);
+                var migrations = context.Database.GetPendingMigrations().ToList();
+                if (migrations.Any())
+                    context.Database.Migrate();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
 
             app.UseRouting();
             app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
