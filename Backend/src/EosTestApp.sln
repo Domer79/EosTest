@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eos.AsposeTest", "Eos.Aspos
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eos.AsposeTest.FW", "Eos.AsposeTest.FW\Eos.AsposeTest.FW.csproj", "{94A4F735-BFC4-4059-9924-577B439A36FA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eos.Data.EF.Postgres", "Eos.Data.EF.Postgres\Eos.Data.EF.Postgres.csproj", "{32754F0E-7249-4D5E-897F-6210DE1C518A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{94A4F735-BFC4-4059-9924-577B439A36FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94A4F735-BFC4-4059-9924-577B439A36FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94A4F735-BFC4-4059-9924-577B439A36FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32754F0E-7249-4D5E-897F-6210DE1C518A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32754F0E-7249-4D5E-897F-6210DE1C518A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32754F0E-7249-4D5E-897F-6210DE1C518A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32754F0E-7249-4D5E-897F-6210DE1C518A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
