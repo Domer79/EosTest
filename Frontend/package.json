@@ -59,7 +59,7 @@
         "fibers": "^4.0.2",
         "file-saver": "^2.0.2",
         "material-design-icons-iconfont": "^5.0.1",
-        "moment": "^2.24.0",
+        "moment": "^2.29.4",
         "path": "^0.12.7",
         "sass-loader": "^8.0.0",
         "vee-validate": "^2.2.15",
